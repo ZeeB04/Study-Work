@@ -213,12 +213,11 @@ def session():
 
     global pwUse
     global pWord
-    filePath = "./Files"
     pwUse = StringVar()
     pWord = StringVar()
     createFile = open("Files/"+displayUser, "a+")
     createFile.close()
-    f = open(displayUser, "r")
+    f = open("Files/"+displayUser, "r")
 
 
     canvas6.create_text(130, 78, text="Enter what the password is for:", font= "Calibri 14", fill="white")
@@ -241,7 +240,7 @@ def saveDetails():
     # userDict[passUse]=usePass
 
 
-    with open(displayUser, "a+") as outfile:
+    with open("Files/"+displayUser, "a+") as outfile:
         json.dump(passUse+" | "+usePass, outfile)
         outfile.write("\n")
     useEntry.delete(0, END)
