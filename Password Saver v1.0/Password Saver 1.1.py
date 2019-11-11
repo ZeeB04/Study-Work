@@ -3,6 +3,11 @@ import hashlib, uuid
 import os
 import json
 
+
+if os.path.isdir("Files/") == False:
+    os.mkdir("Files/")
+
+
 def main():
 
     global infoDict
